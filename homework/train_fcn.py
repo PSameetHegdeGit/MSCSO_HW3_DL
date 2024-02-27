@@ -61,14 +61,14 @@ def train(args):
     dense_transforms_to_apply = dense_transforms.Compose(
         [
             dense_transforms.RandomHorizontalFlip(),
-            dense_transforms.ColorJitter(brightness=0.2, contrast=0.3, saturation=0.3, hue=0.2),
+            dense_transforms.ColorJitter(brightness=0.2, contrast=0.3, saturation=0.3, hue=0.1),
             dense_transforms.ToTensor()
         ]
     )
 
-    train_data = load_dense_data('dense_data/train')
+    train_data = load_dense_data('dense_data/train', transform=dense_transforms_to_apply)
   #  train_data = load_dense_data('dense_data/train')
-    valid_data = load_dense_data('dense_data/valid', transform=dense_transforms_to_apply)
+    valid_data = load_dense_data('dense_data/valid')
 
 
     conf_matrix_train = ConfusionMatrix()
