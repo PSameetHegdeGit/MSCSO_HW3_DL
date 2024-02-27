@@ -1,0 +1,6 @@
+data/
+dense_data/
+homework/fcn.th
+cnn.th
+log/*
+homework/__pycache__/
